@@ -1,25 +1,24 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-              <svg viewBox="0 0 40 40" className="w-8 h-8" fill="black">
-                <path d="M20 8C15 8 12 12 12 16c0 2 1 4 2 5v6c0 2 1 3 3 3h6c2 0 3-1 3-3v-6c1-1 2-3 2-5 0-4-3-8-8-8zm0 2c3 0 5 2 5 5 0 1-1 2-1 3h-8c0-1-1-2-1-3 0-3 2-5 5-5z" />
-              </svg>
-            </div>
+          <Link href="/">
+          <div className="flex items-center ">
+          <Image src="/images/logo3.png" alt="Logo" width={100} height={100} className="w-[83px] h-[83px]" />
           </div>
+          </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="#about"
+              href="/about"
               className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
             >
               About
