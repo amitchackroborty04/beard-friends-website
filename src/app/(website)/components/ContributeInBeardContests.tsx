@@ -1,3 +1,6 @@
+
+
+
 "use client";
 import React from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
@@ -8,10 +11,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Award, Share2 } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import ContestantCard from "@/components/common/ContestantCard";
 
 function ContributeInBeardContests() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -22,9 +24,7 @@ function ContributeInBeardContests() {
   );
 
   React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCurrent(api.selectedScrollSnap());
 
@@ -35,40 +35,45 @@ function ContributeInBeardContests() {
 
   const contestants = [
     {
-      id: 1,
+      id: "1",
+      name: "Contestant 1",
       votes: 1455,
-      image: "/images/contributor.jpg",
+      imageUrl: "/images/contributor.jpg",
       rank: "1st",
     },
     {
-      id: 2,
+      id: "2",
+      name: "Contestant 2",
       votes: 1401,
-      image: "/images/contributor.jpg",
+      imageUrl: "/images/contributor.jpg",
       rank: "2nd",
     },
     {
-      id: 3,
+      id: "3",
+      name: "Contestant 3",
       votes: 1389,
-      image: "/images/contributor.jpg",
+      imageUrl: "/images/contributor.jpg",
       rank: "3rd",
     },
     {
-      id: 4,
+      id: "4",
+      name: "Contestant 4",
       votes: 1256,
-      image: "/images/contributor.jpg",
+      imageUrl: "/images/contributor.jpg",
       rank: "4th",
     },
     {
-      id: 5,
+      id: "5",
+      name: "Contestant 5",
       votes: 1134,
-      image: "/images/contributor.jpg",
+      imageUrl: "/images/contributor.jpg",
       rank: "5th",
     },
   ];
 
   return (
-    <div className="bg-[#1a1a1a] py-16 px-4">
-      <div className="container mx-auto max-w-7xl">
+    <div className="bg-[#1a1a1a] py-16 md:px-4">
+      <div className="container mx-auto overflow-hidden md:overflow-visible">
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -103,43 +108,13 @@ function ContributeInBeardContests() {
                 key={contestant.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <Card className="bg-[#2a2a2a] border-none overflow-hidden group cursor-pointer">
-                  <CardContent className="p-0">
-                    {/* Image with Rank Badge */}
-                    <div className="relative h-80 overflow-hidden">
-                      <Image
-                        fill
-                        src={contestant.image}
-                        alt={`Contestant ${contestant.id}`}
-                        className="object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                      />
-                      
-                      {/* Rank Badge */}
-                      <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-[#BA5EEF] flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">
-                          {contestant.rank}
-                        </span>
-                      </div>
-
-                      {/* Share Button */}
-                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors">
-                        <Share2 className="w-5 h-5 text-black" />
-                      </div>
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    </div>
-
-                    {/* Votes Section */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <div className="flex items-center gap-3 text-white">
-                        <Award className="w-6 h-6 fill-white" />
-                        <span className="text-xl font-bold">
-                          {contestant.votes} Votes
-                        </span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ContestantCard
+                  id={contestant.id}
+                  name={contestant.name}
+                  imageUrl={contestant.imageUrl}
+                  votes={contestant.votes}
+                  featured={false}
+                />
               </CarouselItem>
             ))}
           </CarouselContent>

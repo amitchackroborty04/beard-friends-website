@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function About_community() {
   return (
-    <section className="bg-[#0E0E0F] px-4 py-12 md:px-8 md:py-[150px]">
+    <section className="bg-[#0E0E0F]  py-12 md:px-8 md:py-[150px]">
       <div className="mx-auto container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
          

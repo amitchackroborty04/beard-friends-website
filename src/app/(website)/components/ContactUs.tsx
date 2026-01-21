@@ -32,7 +32,7 @@ function ContactUs() {
   };
 
   return (
-    <div className="bg-[#1a1a1a] py-16 px-4">
+    <div className="bg-[#1a1a1a] py-16 md:px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Contact Form */}

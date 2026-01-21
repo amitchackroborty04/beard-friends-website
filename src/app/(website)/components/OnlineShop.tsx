@@ -1,3 +1,6 @@
+
+
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
@@ -9,7 +12,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
@@ -23,9 +25,7 @@ function OnlineShop() {
   );
 
   React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCurrent(api.selectedScrollSnap());
 
@@ -108,7 +108,7 @@ function OnlineShop() {
   ];
 
   return (
-    <div className="bg-[#1C1C1E] py-16">
+    <div className="bg-[#1C1C1E] md:py-16 overflow-x-hidden">
       <div className="">
         {/* Header */}
         <div className="text-center mb-4">
@@ -130,44 +130,43 @@ function OnlineShop() {
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent>
             {products.map((product) => (
               <CarouselItem
                 key={product.id}
-                className="pl-4 basis-1/2 md:basis-1/4 lg:basis-1/5"
+                className="px-2 basis-1/2 md:basis-1/4 lg:basis-1/5 min-w-0"
               >
-                <Card className="bg-white border-none overflow-hidden group cursor-pointer">
-                  <CardContent className="p-0">
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                      <Image
-                        fill
-                        src={product.image}
-                        alt={product.name}
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
+                <div className="bg-white border-none overflow-hidden group cursor-pointer rounded-lg flex flex-col h-full">
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <Image
+                      fill
+                      src={product.image}
+                      alt={product.name}
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
 
-                    {/* Content */}
-                    <div className="p-4 bg-[#1a1a1a]">
+                  {/* Content */}
+                  <div className="p-4 bg-[#1a1a1a] flex flex-col flex-grow justify-between">
+                    <div>
                       <h3 className="text-lg font-bold text-white mb-1">
                         {product.name}
                       </h3>
                       <p className="text-gray-400 text-xs mb-3">
                         {product.description}
                       </p>
-
-                      <div className="flex items-center justify-between">
-                        <span className="text-white text-xl font-bold">
-                          {product.price}
-                        </span>
-                        <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-colors">
-                          <ChevronRight className="w-5 h-5 text-black" />
-                        </button>
-                      </div>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white text-xl font-bold">
+                        {product.price}
+                      </span>
+                      <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-colors">
+                        <ChevronRight className="w-5 h-5 text-black" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>

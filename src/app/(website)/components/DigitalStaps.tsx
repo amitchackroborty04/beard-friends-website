@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function DigitalSteps() {
   return (
-    <div className="bg-[#0E0E0F] py-12 px-4">
+    <div className="bg-[#0E0E0F] py-12 md:px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content Section */}

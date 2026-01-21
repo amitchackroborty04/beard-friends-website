@@ -30,8 +30,8 @@ function FAQ() {
   ];
 
   return (
-    <div className="bg-[#1a1a1a] py-16 px-4">
-      <div className="container mx-auto max-w-4xl">
+    <div className="bg-[#1a1a1a] py-16 md:px-4">
+      <div className="container mx-auto ">
         {/* Header */}
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
           FAQs

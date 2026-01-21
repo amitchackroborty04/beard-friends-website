@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function AboutOurCommunity() {
   return (
-    <div className="bg-[#0E0E0F] py-16 px-4">
+    <div className="bg-[#0E0E0F] py-16 md:px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Section */}

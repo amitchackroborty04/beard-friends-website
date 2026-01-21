@@ -4,18 +4,18 @@
 
 import Image from 'next/image'
 
-export default function About_us() {
+export default function Beard_About() {
   return (
-    <section className="bg-[#1C1C1E] md:px-6 py-10  md:py-20 lg:py-[110px]">
-      <div className="mx-auto container max-w-7xl">
+    <section className="bg-[#1C1C1E]  py-10  md:py-20 lg:pt-[110px] lg:pb-14">
+      <div className="mx-auto container ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-[80px] items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl sm:text-4xl md:text-[48px] font-extrabold text-[#FFFFFFDE] mb-8 sm:mb-10">
-              About
+              Beard Contest
             </h2>
             <p className="text-[#D9D9D9] text-sm sm:text-base md:text-xl leading-relaxed md:leading-[186%] text-justify max-w-full sm:max-w-[520px]">
-              The barber online community offered by Beard Friends is a great way for individuals to connect and share their passion for proper beard maintenance. The community allows users to find nearby barber shops, participate in beard contests, and shop for grooming items, all while connecting with other like-minded individuals. Whether you&apos;re a seasoned beard enthusiast or just starting out, the community provides a platform to learn, share, and grow together. With a supportive and knowledgeable community at your fingertips, maintaining a healthy and stylish beard has never been easier.
+              Hello to all the beard enthusiasts out there! We&apos;re thrilled to inform you about our current monthly online beard competition. Whether you&apos;re nurturing a full beard, an elegant mustache, or a unique facial hair creation – this online competition is just the thing for you! We warmly invite everyone who has invested time and dedication into growing and grooming their beards to showcase their impressive and stylish creations to like-minded individuals. At the end of each competition, a small surprise awaits the winner!
             </p>
           </div>
 
@@ -24,7 +24,7 @@ export default function About_us() {
             {/* First Image - Left */}
             <div className="absolute left-6 sm:left-10 top-[50px] sm:top-[60px] z-10">
               <Image
-                src="/images/about2.jpg"
+                src="/images/contest1.jpg"
                 alt="Bearded man wearing bandana"
                 width={400}
                 height={500}
@@ -34,11 +34,11 @@ export default function About_us() {
                 priority
               />
             </div>
-
+            
             {/* Second Image - Right & Offset */}
             <div className="absolute right-0 top-[50px] sm:top-[60px] md:top-[80px] lg:top-[140px] z-0">
               <Image
-                src="/images/about3.jpg"
+                src="/images/contest2.jpg"
                 alt="Bearded man in hat"
                 width={400}
                 height={500}

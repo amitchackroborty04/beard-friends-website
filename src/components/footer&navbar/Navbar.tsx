@@ -1,81 +1,156 @@
+
+
+
+
+"use client";
+
 import React from "react";
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu } from "lucide-react";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-1">
-        <div className="flex items-center justify-between">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-[#1C1C1E]/95 backdrop-blur-md border-b border-white/5 shadow-sm">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex h-16 sm:h-20 items-center justify-between">
+          
           {/* Logo */}
-          <Link href="/">
-          <div className="flex items-center ">
-          <Image src="/images/logo3.png" alt="Logo" width={100} height={100} className="w-[83px] h-[83px]" />
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo3.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="w-16 sm:w-[83px] h-16 sm:h-[83px] object-contain"
+              priority
+            />
           </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="/about"
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
-            >
-              About
-            </a>
-            <a
-              href="#contest"
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
-            >
-              Beard Contest
-            </a>
-            <a
-              href="#shops"
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
-            >
-              Barber Shops
-            </a>
-            <a
-              href="#shop"
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
-            >
-              Online Shop
-            </a>
-            <a
-              href="#contact"
-              className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
-            >
-              Contact
-            </a>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+            <NavLink href="/about">About</NavLink>
+            <NavLink href="/beard-contest">Beard Contest</NavLink>
+            <NavLink href="/shops">Barber Shops</NavLink>
+            <NavLink href="/shop">Online Shop</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
           </div>
 
-          {/* Language Selector & Profile */}
-          <div className="flex items-center space-x-4">
-            <button className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
-              <Image
-                width={300}
-                height={300}
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4' clip-path='inset(0)'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"
-                alt="UK Flag"
-                className="w-5 h-4"
-              />
-              <span className="text-sm font-medium">Eng (UK)</span>
-              <ChevronDown className="w-4 h-4" />
-            </button>
-
-            <div className="w-8 h-8 rounded-full bg-gray-400 overflow-hidden">
-              <Image
-                width={300}
-                height={300}
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23ccc'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%23999'/%3E%3Cpath d='M25 75c0-13.8 11.2-25 25-25s25 11.2 25 25' fill='%23999'/%3E%3C/svg%3E"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+          {/* Right side – Mobile Hamburger + Desktop Button */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            {/* Desktop Download App Button */}
+            <div className="hidden lg:block">
+              <Button
+                asChild
+                className="bg-[#BA5EEF] hover:bg-[#BA5EEF]/90 text-white h-11 sm:h-14 px-5 sm:px-8 text-base sm:text-xl font-semibold rounded-xl transition-all"
+              >
+                <Link href="/login">Download App</Link>
+              </Button>
             </div>
+
+            {/* Mobile Menu Trigger */}
+            <Sheet>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="ghost" size="icon" className="text-white">
+                  <Menu className="!h-7 !w-7" />
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent 
+                side="right" 
+                className="w-[85%] sm:w-[400px] bg-[#1C1C1E] border-l border-white/10 p-0"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Logo in mobile menu */}
+                  <div className="p-6 border-b border-white/10">
+                    <Link href="/" className="flex items-center">
+                      <Image
+                        src="/images/logo3.png"
+                        alt="Logo"
+                        width={80}
+                        height={80}
+                        className="w-14 h-14 object-contain"
+                      />
+                    </Link>
+                  </div>
+
+                  {/* Navigation Links – will close sheet on click */}
+                  <nav className="flex flex-col flex-1 p-6 gap-2 text-base">
+                    <MobileNavLink href="/about">About</MobileNavLink>
+                    <MobileNavLink href="/beard-contest">Beard Contest</MobileNavLink>
+                    <MobileNavLink href="#shops">Barber Shops</MobileNavLink>
+                    <MobileNavLink href="#shop">Online Shop</MobileNavLink>
+                    <MobileNavLink href="/contact">Contact</MobileNavLink>
+                  </nav>
+
+                  {/* Download App button at bottom */}
+                  <div className="p-6 border-t border-white/10 mt-auto">
+                    <Button
+                      asChild
+                      className="w-full bg-[#BA5EEF] hover:bg-[#BA5EEF]/90 h-14 text-lg font-semibold rounded-xl"
+                    >
+                      <Link href="/login">Download App</Link>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
     </nav>
+  );
+}
+
+// Desktop nav link
+function NavLink({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "text-white/90 hover:text-white text-sm xl:text-base font-medium transition-colors",
+        className
+      )}
+    >
+      {children}
+    </Link>
+  );
+}
+
+// Mobile nav link – closes sheet on click
+function MobileNavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <SheetClose asChild>
+      <Link
+        href={href}
+        className="block py-4 px-2 text-lg font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+      >
+        {children}
+      </Link>
+    </SheetClose>
   );
 }
 
