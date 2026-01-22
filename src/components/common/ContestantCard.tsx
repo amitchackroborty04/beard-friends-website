@@ -75,7 +75,7 @@ export default function ContestantCard({
         </div>
 
         {/* Like Button - positioned a bit higher */}
-        <Button
+        {/* <Button
           onClick={handleLike}
           variant="ghost"
           size="icon"
@@ -86,7 +86,7 @@ export default function ContestantCard({
           }`}
         >
           <ThumbsUp className={`h-6 w-6 sm:!h-7 sm:!w-7 ${isLiked ? 'fill-current' : ''}`} />
-        </Button>
+        </Button> */}
       </div>
 
       {/* Name overlay (optional - appears on hover for featured) */}
