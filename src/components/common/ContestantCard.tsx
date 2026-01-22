@@ -6,8 +6,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ThumbsUp } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+// import { ThumbsUp } from 'lucide-react'
+// import { Button } from '@/components/ui/button'
 
 interface ContestantCardProps {
   id: string
