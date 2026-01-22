@@ -10,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ArrowRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import ContestantCard from "@/components/common/ContestantCard";
 
@@ -187,12 +186,12 @@ function ContributeInBeardContests() {
         </div>
 
         {/* View All Button */}
-        <div className="flex justify-center mt-8">
+        {/* <div className="flex justify-center mt-8">
           <button className="bg-[#BA5EEF] hover:bg-[#A54DD9] text-white font-semibold px-8 py-3 rounded-lg flex items-center gap-2 transition-all duration-300 hover:gap-3">
             View All
             <ArrowRight className="w-5 h-5" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

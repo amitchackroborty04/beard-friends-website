@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, ArrowRight } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 
 // ────────────────────────────────────────────────
@@ -194,12 +194,12 @@ function Barbershops() {
           </div>
         )}
 
-        <div className="flex justify-center mt-12">
+        {/* <div className="flex justify-center mt-12">
           <button className="w-full sm:w-auto bg-[#BA5EEF] hover:bg-[#A54DD9] text-white font-bold px-10 py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-lg shadow-purple-500/20">
             Explore All
             <ArrowRight className="w-5 h-5" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

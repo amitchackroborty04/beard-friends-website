@@ -53,7 +53,7 @@ function Navbar() {
                 asChild
                 className="bg-[#BA5EEF] hover:bg-[#BA5EEF]/90 text-white h-11 sm:h-14 px-5 sm:px-8 text-base sm:text-xl font-semibold rounded-xl transition-all"
               >
-                <Link href="/login">Download App</Link>
+                <Link href="/comming-soon">Download App</Link>
               </Button>
             </div>
 
@@ -98,7 +98,7 @@ function Navbar() {
                       asChild
                       className="w-full bg-[#BA5EEF] hover:bg-[#BA5EEF]/90 h-14 text-lg font-semibold rounded-xl"
                     >
-                      <Link href="/login">Download App</Link>
+                      <Link href="/comming-soon">Download App</Link>
                     </Button>
                   </div>
                 </div>

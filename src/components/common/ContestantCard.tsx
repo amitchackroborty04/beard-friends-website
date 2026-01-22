@@ -3,8 +3,6 @@
 
 // components/common/ContestantCard.tsx
 'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
 // import { ThumbsUp } from 'lucide-react'
 // import { Button } from '@/components/ui/button'
@@ -23,14 +21,14 @@ export default function ContestantCard({
   votes,
   featured = false,
 }: ContestantCardProps) {
-  const [currentVotes, setCurrentVotes] = useState(votes)
-  const [isLiked, setIsLiked] = useState(false)
+  // const [currentVotes, setCurrentVotes] = useState(votes)
+  // const [isLiked, setIsLiked] = useState(false)
 
-  const handleLike = () => {
-    setIsLiked(prev => !prev)
-    setCurrentVotes(prev => (isLiked ? prev - 1 : prev + 1))
-  }
-
+  // const handleLike = () => {
+  //   setIsLiked(prev => !prev)
+  //   setCurrentVotes(prev => (isLiked ? prev - 1 : prev + 1))
+  // }
+  
   const cardHeight = featured
     ? 'h-64 sm:h-80 md:h-[292px]'
     : 'h-56 sm:h-64 md:h-[292px]'
@@ -66,7 +64,7 @@ export default function ContestantCard({
           {/* Votes */}
           <div className="flex items-baseline gap-1.5">
             <span className="text-lg sm:text-xl md:text-2xl font-semibold text-white/90">
-              {currentVotes.toLocaleString()}
+              {votes.toLocaleString()}
             </span>
             <span className="text-sm sm:text-base font-medium text-white/70">
               votes
