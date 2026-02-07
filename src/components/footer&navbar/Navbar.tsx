@@ -40,8 +40,8 @@ function Navbar() {
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             <NavLink href="/about">About</NavLink>
             <NavLink href="/beard-contest">Beard Contest</NavLink>
-            <NavLink href="/shops">Barber Shops</NavLink>
-            <NavLink href="/shop">Online Shop</NavLink>
+            {/* <NavLink href="/shops">Barber Shops</NavLink> */}
+            {/* <NavLink href="/shop">Online Shop</NavLink> */}
             <NavLink href="/contact">Contact</NavLink>
           </div>
 

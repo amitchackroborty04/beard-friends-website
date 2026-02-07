@@ -161,9 +161,9 @@ function OnlineShop() {
                       <span className="text-white text-xl font-bold">
                         {product.price}
                       </span>
-                      <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-colors">
+                      {/* <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-colors">
                         <ChevronRight className="w-5 h-5 text-black" />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
